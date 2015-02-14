@@ -10,9 +10,11 @@
 #import <UIKit/UIKit.h>
 #import "SongMO+Actions.h"
 
+
+
 @interface MPSongViewCell : UITableViewCell
 
 -(void)fillWithSong:(SongMO *)song;
-@property (weak, nonatomic) IBOutlet UIButton *downloadSong;
+@property (weak, nonatomic) IBOutlet UIButton *downloadSongButton;
 
 @end

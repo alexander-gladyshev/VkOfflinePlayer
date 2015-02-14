@@ -24,6 +24,7 @@
 		111A5E741A76DBBE00E6D425 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111A5E731A76DBBE00E6D425 /* AudioToolbox.framework */; };
 		111A5E761A77A18000E6D425 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111A5E751A77A18000E6D425 /* AVFoundation.framework */; };
 		1121FA881A76840000FE1B24 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FA871A76840000FE1B24 /* LoginViewController.m */; };
+		115A80FB1A8FD5B7003B0AC9 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 115A80FA1A8FD5B7003B0AC9 /* UCZProgressView.m */; };
 		1191C1CF1A7686C00092FE20 /* VKUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1191C1CE1A7686C00092FE20 /* VKUserManager.m */; };
 		1191C1D41A76AE140092FE20 /* MPPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1191C1D31A76AE140092FE20 /* MPPagesViewController.m */; };
 		1191C1D61A76AE370092FE20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1191C1D51A76AE370092FE20 /* UIKit.framework */; };
@@ -32,6 +33,7 @@
 		1191C1E01A76B0960092FE20 /* MPOnlinePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1191C1DF1A76B0960092FE20 /* MPOnlinePlaylistViewController.m */; };
 		11A549DF1A809AEB00926546 /* UserMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A549DE1A809AEB00926546 /* UserMO.m */; };
 		11A549E11A809C4200926546 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A549E01A809C4200926546 /* CFNetwork.framework */; };
+		11D9DAB91A8F9E1A00C1E0B3 /* MPNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D9DAB81A8F9E1A00C1E0B3 /* MPNotificationManager.m */; };
 		3571348E5B76052D5243AF6F /* libPods-VKOfflineMusicPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 268E3EDE45069A6C1B2593B5 /* libPods-VKOfflineMusicPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		111A5E751A77A18000E6D425 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1121FA861A76840000FE1B24 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1121FA871A76840000FE1B24 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		115A80F91A8FD5B7003B0AC9 /* UCZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCZProgressView.h; sourceTree = "<group>"; };
+		115A80FA1A8FD5B7003B0AC9 /* UCZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCZProgressView.m; sourceTree = "<group>"; };
 		1191C1CD1A7686C00092FE20 /* VKUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKUserManager.h; sourceTree = "<group>"; };
 		1191C1CE1A7686C00092FE20 /* VKUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKUserManager.m; sourceTree = "<group>"; };
 		1191C1D21A76AE140092FE20 /* MPPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPagesViewController.h; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		11A549DD1A809AEB00926546 /* UserMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMO.h; sourceTree = "<group>"; };
 		11A549DE1A809AEB00926546 /* UserMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMO.m; sourceTree = "<group>"; };
 		11A549E01A809C4200926546 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		11D9DAB71A8F9E1A00C1E0B3 /* MPNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNotificationManager.h; sourceTree = "<group>"; };
+		11D9DAB81A8F9E1A00C1E0B3 /* MPNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNotificationManager.m; sourceTree = "<group>"; };
 		268E3EDE45069A6C1B2593B5 /* libPods-VKOfflineMusicPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKOfflineMusicPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD4029AD7747A492790FADD /* Pods-VKOfflineMusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKOfflineMusicPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKOfflineMusicPlayer/Pods-VKOfflineMusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		BBFD5C08C385A734965A3237 /* Pods-VKOfflineMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKOfflineMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKOfflineMusicPlayer/Pods-VKOfflineMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 		110F5E8F1A7644A600216B17 /* VKOfflineMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				115A80F41A8FD1DE003B0AC9 /* ThirdPartyLibs */,
 				1121FA851A7683DD00FE1B24 /* Controllers */,
 				111A5E6F1A76DB9A00E6D425 /* Services */,
 				111A5E601A76C96200E6D425 /* Model */,
@@ -242,6 +249,9 @@
 		111A5E6F1A76DB9A00E6D425 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				115A80FC1A8FEBB4003B0AC9 /* objects */,
+				11D9DAB71A8F9E1A00C1E0B3 /* MPNotificationManager.h */,
+				11D9DAB81A8F9E1A00C1E0B3 /* MPNotificationManager.m */,
 				1191C1CD1A7686C00092FE20 /* VKUserManager.h */,
 				1191C1CE1A7686C00092FE20 /* VKUserManager.m */,
 				111A5E701A76DBB000E6D425 /* MPAudioPlayer.h */,
@@ -258,6 +268,30 @@
 				1191C1D01A76AD670092FE20 /* Login */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		115A80F41A8FD1DE003B0AC9 /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				115A80F51A8FD1F5003B0AC9 /* EVCircularProgressView */,
+			);
+			name = ThirdPartyLibs;
+			sourceTree = "<group>";
+		};
+		115A80F51A8FD1F5003B0AC9 /* EVCircularProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				115A80F91A8FD5B7003B0AC9 /* UCZProgressView.h */,
+				115A80FA1A8FD5B7003B0AC9 /* UCZProgressView.m */,
+			);
+			name = EVCircularProgressView;
+			sourceTree = "<group>";
+		};
+		115A80FC1A8FEBB4003B0AC9 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = objects;
 			sourceTree = "<group>";
 		};
 		1191C1D01A76AD670092FE20 /* Login */ = {
@@ -364,7 +398,7 @@
 				TargetAttributes = {
 					110F5E8C1A7644A600216B17 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = B9639RHZFT;
+						DevelopmentTeam = 2AWE588629;
 					};
 					110F5EA81A7644A600216B17 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -452,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A549DF1A809AEB00926546 /* UserMO.m in Sources */,
+				11D9DAB91A8F9E1A00C1E0B3 /* MPNotificationManager.m in Sources */,
 				1121FA881A76840000FE1B24 /* LoginViewController.m in Sources */,
 				1191C1E01A76B0960092FE20 /* MPOnlinePlaylistViewController.m in Sources */,
 				1191C1DC1A76AEFF0092FE20 /* MPPagesViewControllerDelegate.m in Sources */,
@@ -460,6 +495,7 @@
 				1191C1D91A76AEEE0092FE20 /* MPPagesViewControllerDataSource.m in Sources */,
 				1191C1D41A76AE140092FE20 /* MPPagesViewController.m in Sources */,
 				111A5E721A76DBB000E6D425 /* MPAudioPlayer.m in Sources */,
+				115A80FB1A8FD5B7003B0AC9 /* UCZProgressView.m in Sources */,
 				111A5E591A76C51400E6D425 /* MPSongViewCell.m in Sources */,
 				1191C1CF1A7686C00092FE20 /* VKUserManager.m in Sources */,
 				111A5E6A1A76CADE00E6D425 /* UserMO+Actions.m in Sources */,
@@ -596,6 +632,7 @@
 				INFOPLIST_FILE = VKOfflineMusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -604,7 +641,7 @@
 			baseConfigurationReference = 4AD4029AD7747A492790FADD /* Pods-VKOfflineMusicPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -612,6 +649,7 @@
 				INFOPLIST_FILE = VKOfflineMusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

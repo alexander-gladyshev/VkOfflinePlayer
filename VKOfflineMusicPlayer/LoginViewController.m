@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "VKUserManager.h"
+#import "MPNotificationManager.h"
 
 @implementation LoginViewController
 
@@ -18,11 +19,18 @@
 
 -(IBAction)loginTap{
     [[VKUserManager sharedInstance] loginWithCompletion:^{
-        if ([self.delegate respondsToSelector:@selector(setOfflineMode:)]){
-            self.delegate.offlineMode = NO;
-        }
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [[VKUserManager sharedInstance] getUserInfoWithCompletion:^{
+            if ([self.delegate respondsToSelector:@selector(setOfflineMode:)]){
+                self.delegate.offlineMode = NO;
+            }
+            [[MPNotificationManager sharedInstance] showNotificationWithText:@"Success" withPositive:YES withCompletion:^{
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+        } failedCompletion:^{
+            [[MPNotificationManager sharedInstance] showNotificationWithText:@"Error Get Info" withPositive:NO];
+        }];
     } failure:^{
+        [[MPNotificationManager sharedInstance] showNotificationWithText:@"Error" withPositive:NO];
         NSLog(@"error");
     }];
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>63C3E811-88F3-4531-9291-70DF58B7D4CC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VKOfflineMusicPlayer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F7C1A8B30D6266F19FC8C0A77D98252F97B6DE28</key>
+		<string>https://github.com/alexander-gladyshev/VkOfflinePlayer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VKOfflineMusicPlayer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F7C1A8B30D6266F19FC8C0A77D98252F97B6DE28</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alexander-gladyshev/VkOfflinePlayer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F7C1A8B30D6266F19FC8C0A77D98252F97B6DE28</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F7C1A8B30D6266F19FC8C0A77D98252F97B6DE28</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VkOfflinePlayer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

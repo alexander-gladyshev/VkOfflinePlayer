@@ -61,4 +61,14 @@ static MPAudioPlayer * instance;
     return NO;
 }
 
+
+-(AFHTTPRequestOperation *)downloadOperationForSong:(SongMO *)song{
+    return [downloadOperations objectForKey:song.identifier];
+}
+
+-(void)addDownloadOperation:(AFHTTPRequestOperation *)operation forSong:(SongMO *)song{
+    if (!downloadOperations) downloadOperations = [NSMutableDictionary dictionary];
+    [downloadOperations setObject:operation forKey:song.identifier];
+}
+
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SongMO.h"
 #import "UserMO+Actions.h"
+typedef void(^DownloadProgressBLock)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead);
 
 @interface SongMO (Actions)
 
@@ -24,6 +25,6 @@
 
 -(BOOL)isCached;
 
--(void)downloadSongToHard;
+-(void)downloadSongToHardWithDownloadBlock:(DownloadProgressBLock)downloadBlock;
 
 @end

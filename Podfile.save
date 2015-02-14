@@ -4,6 +4,7 @@ platform :ios, '7.0'
 target 'VKOfflineMusicPlayer' do
     pod 'AFNetworking', '~> 2.5.0'
     pod 'VK-ios-sdk'
+    pod 'FFCircularProgressView'
     pod 'NAKPlaybackIndicatorView'
-    pod 'CRToast'
+pod 'AFDropdownNotification', '~> 1.0'
 end

@@ -3,7 +3,34 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[SongMO(Actions) downloadSongToHard]:SongMO+Actions.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.fullPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MPAudioPlayer downloadOperationForSong:]:MPAudioPlayer.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "downloadOperations">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[UserMO(Actions) getUserWithId:withContext:]:UserMO+Actions.m">
+      </ContextState>
+      <ContextState
          contextName = "__60-[VKUserManager getUserInfoWithCompletion:failedCompletion:]_block_invoke:VKUserManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "__42-[MPSongViewCell getDownloadProgressBlock]_block_invoke:MPSongViewCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "downloadOperations">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[MPSongViewCell fillWithSong:]:MPSongViewCell.m">
@@ -11,13 +38,8 @@
             <PersistentString
                value = "[song isCached]">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[SongMO(Actions) downloadSongToHard]:SongMO+Actions.m">
-         <PersistentStrings>
             <PersistentString
-               value = "self.fullPath">
+               value = "self.rightConstraint.constant">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,9 +50,6 @@
                value = "self.allSongsFetchResultCtrl.fetchedObjects.count">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "+[UserMO(Actions) getUserWithId:withContext:]:UserMO+Actions.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

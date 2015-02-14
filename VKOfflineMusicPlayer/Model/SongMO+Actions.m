@@ -9,6 +9,8 @@
 #import "SongMO+Actions.h"
 #import "AppDelegate.h"
 #import <AFNetworking.h>
+#import "MPAudioPlayer.h"
+#import "MPSongViewCell.h"
 
 @implementation SongMO (Actions)
 
@@ -46,11 +48,29 @@
     [context save:nil];
 }
 
+-(NSFetchedResultsController *)getFetchResultCOntrollerWithCachedSongs{
+    NSFetchRequest * request = [NSFetchRequest new];
+    NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"SongMO"
+                                                          inManagedObjectContext:[AppDelegate appDelegate].managedObjectContext];
+    [request setEntity:entityDescription];
+    NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"orderId" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    NSFetchedResultsController * fetchResCtrl = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                    managedObjectContext:[AppDelegate appDelegate].managedObjectContext
+                                                                                      sectionNameKeyPath:nil
+                                                                                               cacheName:nil];
+    if (![fetchResCtrl performFetch:nil]){
+        return nil;
+    }
+    return fetchResCtrl;
+}
+
 +(NSFetchedResultsController *)getFetchResultControllerWithAllSongs{
     NSFetchRequest * request = [NSFetchRequest new];
     NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"SongMO"
                                                           inManagedObjectContext:[AppDelegate appDelegate].managedObjectContext];
     [request setEntity:entityDescription];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"isCached==%@",@(YES)];
     NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"orderId" ascending:YES];
     [request setSortDescriptors:@[sortDescriptor]];
     NSFetchedResultsController * fetchResCtrl = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -95,7 +115,7 @@
     return [[NSFileManager defaultManager] fileExistsAtPath:[self fullPath]];
 }
 
--(void)downloadSongToHard{
+-(void)downloadSongToHardWithDownloadBlock:(DownloadProgressBLock)downloadBlock{
     if ([self isCached]){
         return;
     }
@@ -103,13 +123,12 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.outputStream = [NSOutputStream outputStreamToFileAtPath:self.fullPath append:NO];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        self.isCached = YES;
-        [[AppDelegate appDelegate] saveContext];
         NSLog(@"Successfully downloaded file to %@", self.fullPath);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    
+    [operation setDownloadProgressBlock:downloadBlock];
+    [[MPAudioPlayer sharedInstance] addDownloadOperation:operation forSong:self];
     [operation start];
 }
 

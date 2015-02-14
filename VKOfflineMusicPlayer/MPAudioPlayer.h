@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SongMO+Actions.h"
+#import <AFNetworking.h>
 
 typedef enum : NSUInteger {
     MPAudioPlayerStateStoped,
@@ -15,6 +16,7 @@ typedef enum : NSUInteger {
     MPAudioPlayerStatePaused,
 } MPAudioPlayerState;
 
+static NSMutableDictionary * downloadOperations;
 
 @interface MPAudioPlayer : NSObject
 
@@ -25,5 +27,9 @@ typedef enum : NSUInteger {
 -(BOOL)isCurrentSong:(SongMO *)song;
 
 @property (nonatomic) MPAudioPlayerState state;
+
+-(AFHTTPRequestOperation *)downloadOperationForSong:(SongMO *)song;
+
+-(void)addDownloadOperation:(AFHTTPRequestOperation *)operation forSong:(SongMO *)song;
 
 @end
