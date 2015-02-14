@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__60-[VKUserManager getUserInfoWithCompletion:failedCompletion:]_block_invoke:VKUserManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MPSongViewCell fillWithSong:]:MPSongViewCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[song isCached]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SongMO(Actions) downloadSongToHard]:SongMO+Actions.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.fullPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MPOnlinePlaylistViewController tableView:numberOfRowsInSection:]:MPOnlinePlaylistViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.allSongsFetchResultCtrl.fetchedObjects.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[UserMO(Actions) getUserWithId:withContext:]:UserMO+Actions.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

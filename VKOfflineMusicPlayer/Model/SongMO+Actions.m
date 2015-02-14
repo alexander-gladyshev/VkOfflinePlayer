@@ -1,0 +1,116 @@
+//
+//  SongMO+Actions.m
+//  VKOfflineMusicPlayer
+//
+//  Created by ALEXANDER GLADYSHEV on 26/01/15.
+//  Copyright (c) 2015 Alex. All rights reserved.
+//
+
+#import "SongMO+Actions.h"
+#import "AppDelegate.h"
+#import <AFNetworking.h>
+
+@implementation SongMO (Actions)
+
++(SongMO *)getSongWithId:(NSString *)songId withContext:(NSManagedObjectContext *)context{
+    NSFetchRequest * request = [NSFetchRequest new];
+    NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"SongMO" inManagedObjectContext:context];
+    [request setEntity:entityDescription];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"identifier = %@", songId];
+    [request setPredicate:predicate];
+    NSArray * result = [context executeFetchRequest:request error:nil];
+    SongMO * song;
+    if ([result count]){
+        song = result[0];
+    }else{
+        song = (SongMO *)[[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+        song.identifier = [NSString stringWithFormat:@"%@", songId];
+        [context save:nil];
+        
+    }
+    return song;
+}
+
++(void)parseSongsJSON:(NSDictionary *)json withContext:(NSManagedObjectContext *)context{
+    NSArray * songs = json[@"items"];
+    for (NSDictionary * songDic in songs) {
+        SongMO * song = [SongMO getSongWithId:songDic[@"id"] withContext:context];
+        song.artist = songDic[@"artist"];
+        song.duration = songDic[@"duration"];
+        song.genre_id = [NSString stringWithFormat:@"%@", songDic[@"genre_id"]];
+        song.owner = [UserMO getUserWithId:songDic[@"owner_id"] withContext:context];
+        song.title = songDic[@"title"];
+        song.url = songDic[@"url"];
+        song.orderId = @([songs indexOfObject:songDic]);
+    }
+    [context save:nil];
+}
+
++(NSFetchedResultsController *)getFetchResultControllerWithAllSongs{
+    NSFetchRequest * request = [NSFetchRequest new];
+    NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"SongMO"
+                                                          inManagedObjectContext:[AppDelegate appDelegate].managedObjectContext];
+    [request setEntity:entityDescription];
+    NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"orderId" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    NSFetchedResultsController * fetchResCtrl = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                    managedObjectContext:[AppDelegate appDelegate].managedObjectContext
+                                                                                      sectionNameKeyPath:nil
+                                                                                               cacheName:nil];
+    if (![fetchResCtrl performFetch:nil]){
+        return nil;
+    }
+    return fetchResCtrl;
+}
+
++(NSFetchedResultsController *)getFetchResultControllerWithSongsForOwnerId:(NSString *)ownerId{
+    NSFetchRequest * request = [NSFetchRequest new];
+    NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"SongMO"
+                                                          inManagedObjectContext:[AppDelegate appDelegate].managedObjectContext];
+    [request setEntity:entityDescription];
+    NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"orderId" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    NSManagedObject *newNumbers = [NSEntityDescription insertNewObjectForEntityForName:@"SongMO" inManagedObjectContext:[AppDelegate appDelegate].managedObjectContext];
+                                   NSPredicate * predicate = [NSPredicate predicateWithFormat:@"owner.identifier = %@",ownerId];
+    [request setPredicate:predicate];
+    NSFetchedResultsController * fetchResCtrl = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                    managedObjectContext:[AppDelegate appDelegate].managedObjectContext
+                                                                                      sectionNameKeyPath:nil
+                                                                                               cacheName:nil];
+    if (![fetchResCtrl performFetch:nil]){
+        return nil;
+    }
+    return fetchResCtrl;
+}
+
+-(NSString *)fullName{
+    return [self.artist stringByAppendingFormat:@" - %@",self.title];
+}
+
+-(NSString *)fullPath{
+    return [NSString stringWithFormat:@"%@%@.mp3",[NSHomeDirectory() stringByAppendingString:@"/Documents/"],[self.title stringByAppendingString:self.identifier]];
+}
+
+-(BOOL)isCached{
+    return [[NSFileManager defaultManager] fileExistsAtPath:[self fullPath]];
+}
+
+-(void)downloadSongToHard{
+    if ([self isCached]){
+        return;
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:self.fullPath append:NO];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.isCached = YES;
+        [[AppDelegate appDelegate] saveContext];
+        NSLog(@"Successfully downloaded file to %@", self.fullPath);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    [operation start];
+}
+
+@end
