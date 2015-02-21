@@ -35,6 +35,8 @@
     }];
 }
 
+
+
 - (IBAction)offlineTap:(id)sender {
     if ([self.delegate respondsToSelector:@selector(setOfflineMode:)]){
         self.delegate.offlineMode = YES;

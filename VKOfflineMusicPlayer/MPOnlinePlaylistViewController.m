@@ -25,19 +25,19 @@
     [super viewWillAppear:animated];
     self.loaderIndicatorView.hidden = NO;
     if ([VKUserManager sharedInstance].user && ! self.offlineMode){
-        [[VKUserManager sharedInstance] getUserInfoWithCompletion:^{
-            self.nickNameLabel.text = [[VKUserManager sharedInstance] getFullUserName];
-            self.loaderIndicatorView.hidden =YES;
-            [self loadSongs];
-        } failedCompletion:^{
-            self.nickNameLabel.text = @"ошибка загрузки информации о пользователе";
-            self.loaderIndicatorView.hidden =YES;
-        }];
+        self.nickNameLabel.text = [[VKUserManager sharedInstance] getFullUserName];
+        self.loaderIndicatorView.hidden =YES;
+        [self loadSongs];
     }else if (!self.offlineMode){
+        self.nickNameLabel.text = @"ошибка загрузки информации о пользователе";
+        self.loaderIndicatorView.hidden =YES;
         [self performSegueWithIdentifier:@"LoginAuthSegue" sender:self];
     }else{
+        self.nickNameLabel.text = @"ошибка загрузки информации о пользователе";
+        self.loaderIndicatorView.hidden =YES;
         [self getSongsFromDataBase];
     }
+    self.offlineModeSwitcher.on = self.offlineMode;
 }
 
 -(void)loadSongs{
@@ -55,7 +55,7 @@
 }
 
 -(void)getSongsFromDataBase{
-    self.allSongsFetchResultCtrl = [SongMO getFetchResultControllerWithAllSongs];
+    self.allSongsFetchResultCtrl = self.offlineMode ? [SongMO getFetchResultCOntrollerWithCachedSongs] :[SongMO getFetchResultControllerWithAllSongs];
     self.allSongsFetchResultCtrl.delegate = self;
     [self.tableView reloadData];
     [self checkForEmptyList];
@@ -92,6 +92,7 @@
     }else{
         [[MPAudioPlayer sharedInstance] playSong:selectedSong];
     }
+    [self.tableView reloadRowsAtIndexPaths:self.tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark NSFetchedResultsControllerDelegate
@@ -119,6 +120,14 @@
     [self checkForEmptyList];
 }
 
+- (IBAction)changeMode:(UISwitch *)sender {
+    self.offlineMode = sender.isOn;
+    if (!self.offlineMode && ![VKUserManager sharedInstance].user){
+        [self performSegueWithIdentifier:@"LoginAuthSegue" sender:self];
+    }else{
+        [self getSongsFromDataBase];
+    }
+}
 
 -(void)checkForEmptyList{
     if (![self.allSongsFetchResultCtrl.fetchedObjects count]){

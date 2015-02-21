@@ -6,4 +6,6 @@ target 'VKOfflineMusicPlayer' do
     pod 'VK-ios-sdk'
     pod 'NAKPlaybackIndicatorView'
     pod 'CRToast'
+    pod 'NAKPlaybackIndicatorView'
+    pod 'Spring'
 end

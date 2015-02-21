@@ -16,6 +16,7 @@ typedef void(^DownloadProgressBLock)(NSUInteger bytesRead, long long totalBytesR
 +(void)parseSongsJSON:(NSDictionary *)json withContext:(NSManagedObjectContext *)context;
 
 +(NSFetchedResultsController *)getFetchResultControllerWithAllSongs;
++(NSFetchedResultsController *)getFetchResultCOntrollerWithCachedSongs;
 
 +(NSArray *)getSongsWithContext:(NSManagedObjectContext *)context;
 
@@ -23,7 +24,7 @@ typedef void(^DownloadProgressBLock)(NSUInteger bytesRead, long long totalBytesR
 
 -(NSString *)fullPath;
 
--(BOOL)isCached;
+-(BOOL)isRealCached;
 
 -(void)downloadSongToHardWithDownloadBlock:(DownloadProgressBLock)downloadBlock;
 

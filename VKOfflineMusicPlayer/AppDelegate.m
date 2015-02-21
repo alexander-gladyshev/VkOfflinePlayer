@@ -25,6 +25,9 @@ static AppDelegate * instance;
     instance = self;
     // Override point for customization after application launch.
     [VKUserManager sharedInstance];
+//    if ([NSUserDefaults standardUserDefaults] objectForKey:@"VKToken"){
+//    VKSdk setAccessToken:<#(VKAccessToken *)#>
+//    }
     return YES;
 }
 

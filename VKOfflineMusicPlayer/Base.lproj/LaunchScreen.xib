@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -13,16 +13,46 @@
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="beats_full.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="f94-jK-zHA">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-XB-9Oo">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Uuj-mK-LCF">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ge-ZE-Y2Q">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QFv-SO-RLA">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                    </view>
+                    <color key="backgroundColor" red="0.0" green="0.3211315550048468" blue="1" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
+                    <blurEffect style="light"/>
+                </visualEffectView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Cxb-XB-9Oo" secondAttribute="trailing" id="4Kx-dM-5DD"/>
                 <constraint firstItem="f94-jK-zHA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CdV-KJ-qXw"/>
                 <constraint firstItem="f94-jK-zHA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FLT-rY-NxX"/>
                 <constraint firstAttribute="bottom" secondItem="f94-jK-zHA" secondAttribute="bottom" id="Haz-TA-aMx"/>
+                <constraint firstItem="Cxb-XB-9Oo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I6v-qF-vmm"/>
+                <constraint firstItem="Cxb-XB-9Oo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OWN-JV-Ecs"/>
+                <constraint firstAttribute="bottom" secondItem="Cxb-XB-9Oo" secondAttribute="bottom" id="aoq-3B-sxO"/>
                 <constraint firstAttribute="trailing" secondItem="f94-jK-zHA" secondAttribute="trailing" id="wqU-Lk-Tsb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Cxb-XB-9Oo"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>

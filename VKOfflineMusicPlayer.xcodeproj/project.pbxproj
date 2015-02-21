@@ -21,10 +21,13 @@
 		111A5E6A1A76CADE00E6D425 /* UserMO+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 111A5E691A76CADE00E6D425 /* UserMO+Actions.m */; };
 		111A5E6E1A76D05A00E6D425 /* SongMO+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 111A5E6D1A76D05A00E6D425 /* SongMO+Actions.m */; };
 		111A5E721A76DBB000E6D425 /* MPAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 111A5E711A76DBB000E6D425 /* MPAudioPlayer.m */; };
-		111A5E741A76DBBE00E6D425 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111A5E731A76DBBE00E6D425 /* AudioToolbox.framework */; };
 		111A5E761A77A18000E6D425 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111A5E751A77A18000E6D425 /* AVFoundation.framework */; };
 		1121FA881A76840000FE1B24 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FA871A76840000FE1B24 /* LoginViewController.m */; };
 		115A80FB1A8FD5B7003B0AC9 /* UCZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 115A80FA1A8FD5B7003B0AC9 /* UCZProgressView.m */; };
+		116C9D821A93B9FF00CB7EB6 /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C9D811A93B9FF00CB7EB6 /* LaunchScreenViewController.m */; };
+		116C9D891A93E1C200CB7EB6 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C9D861A93E1C200CB7EB6 /* Circle.m */; };
+		116C9D8A1A93E1C200CB7EB6 /* ETActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C9D881A93E1C200CB7EB6 /* ETActivityIndicatorView.m */; };
+		116C9D8D1A93ED5200CB7EB6 /* DiamondActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C9D8C1A93ED5200CB7EB6 /* DiamondActivityIndicator.m */; };
 		1191C1CF1A7686C00092FE20 /* VKUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1191C1CE1A7686C00092FE20 /* VKUserManager.m */; };
 		1191C1D41A76AE140092FE20 /* MPPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1191C1D31A76AE140092FE20 /* MPPagesViewController.m */; };
 		1191C1D61A76AE370092FE20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1191C1D51A76AE370092FE20 /* UIKit.framework */; };
@@ -73,12 +76,20 @@
 		111A5E6D1A76D05A00E6D425 /* SongMO+Actions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SongMO+Actions.m"; sourceTree = "<group>"; };
 		111A5E701A76DBB000E6D425 /* MPAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioPlayer.h; sourceTree = "<group>"; };
 		111A5E711A76DBB000E6D425 /* MPAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAudioPlayer.m; sourceTree = "<group>"; };
-		111A5E731A76DBBE00E6D425 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		111A5E751A77A18000E6D425 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1121FA861A76840000FE1B24 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1121FA871A76840000FE1B24 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		115A80F91A8FD5B7003B0AC9 /* UCZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCZProgressView.h; sourceTree = "<group>"; };
 		115A80FA1A8FD5B7003B0AC9 /* UCZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCZProgressView.m; sourceTree = "<group>"; };
+		116C9D801A93B9FF00CB7EB6 /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
+		116C9D811A93B9FF00CB7EB6 /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
+		116C9D851A93E1C200CB7EB6 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		116C9D861A93E1C200CB7EB6 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		116C9D871A93E1C200CB7EB6 /* ETActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETActivityIndicatorView.h; sourceTree = "<group>"; };
+		116C9D881A93E1C200CB7EB6 /* ETActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETActivityIndicatorView.m; sourceTree = "<group>"; };
+		116C9D8B1A93ED5200CB7EB6 /* DiamondActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiamondActivityIndicator.h; sourceTree = "<group>"; };
+		116C9D8C1A93ED5200CB7EB6 /* DiamondActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiamondActivityIndicator.m; sourceTree = "<group>"; };
+		116C9D8E1A93EFAF00CB7EB6 /* VKOfflineMusicPlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VKOfflineMusicPlayer.entitlements; sourceTree = "<group>"; };
 		1191C1CD1A7686C00092FE20 /* VKUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKUserManager.h; sourceTree = "<group>"; };
 		1191C1CE1A7686C00092FE20 /* VKUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKUserManager.m; sourceTree = "<group>"; };
 		1191C1D21A76AE140092FE20 /* MPPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPagesViewController.h; sourceTree = "<group>"; };
@@ -107,7 +118,6 @@
 			files = (
 				11A549E11A809C4200926546 /* CFNetwork.framework in Frameworks */,
 				111A5E761A77A18000E6D425 /* AVFoundation.framework in Frameworks */,
-				111A5E741A76DBBE00E6D425 /* AudioToolbox.framework in Frameworks */,
 				1191C1D61A76AE370092FE20 /* UIKit.framework in Frameworks */,
 				3571348E5B76052D5243AF6F /* libPods-VKOfflineMusicPlayer.a in Frameworks */,
 			);
@@ -146,6 +156,7 @@
 		110F5E8F1A7644A600216B17 /* VKOfflineMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				116C9D8E1A93EFAF00CB7EB6 /* VKOfflineMusicPlayer.entitlements */,
 				115A80F41A8FD1DE003B0AC9 /* ThirdPartyLibs */,
 				1121FA851A7683DD00FE1B24 /* Controllers */,
 				111A5E6F1A76DB9A00E6D425 /* Services */,
@@ -155,6 +166,8 @@
 				110F5E951A7644A600216B17 /* AppDelegate.m */,
 				110F5E9D1A7644A600216B17 /* Main.storyboard */,
 				110F5EA01A7644A600216B17 /* Images.xcassets */,
+				116C9D801A93B9FF00CB7EB6 /* LaunchScreenViewController.h */,
+				116C9D811A93B9FF00CB7EB6 /* LaunchScreenViewController.m */,
 				110F5EA21A7644A600216B17 /* LaunchScreen.xib */,
 				110F5E971A7644A600216B17 /* VKOfflineMusicPlayer.xcdatamodeld */,
 				110F5EC51A76492500216B17 /* Podfile */,
@@ -273,6 +286,7 @@
 		115A80F41A8FD1DE003B0AC9 /* ThirdPartyLibs */ = {
 			isa = PBXGroup;
 			children = (
+				116C9D841A93E1C200CB7EB6 /* ETActivityIndicatorView */,
 				115A80F51A8FD1F5003B0AC9 /* EVCircularProgressView */,
 			);
 			name = ThirdPartyLibs;
@@ -292,6 +306,19 @@
 			children = (
 			);
 			name = objects;
+			sourceTree = "<group>";
+		};
+		116C9D841A93E1C200CB7EB6 /* ETActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				116C9D8B1A93ED5200CB7EB6 /* DiamondActivityIndicator.h */,
+				116C9D8C1A93ED5200CB7EB6 /* DiamondActivityIndicator.m */,
+				116C9D851A93E1C200CB7EB6 /* Circle.h */,
+				116C9D861A93E1C200CB7EB6 /* Circle.m */,
+				116C9D871A93E1C200CB7EB6 /* ETActivityIndicatorView.h */,
+				116C9D881A93E1C200CB7EB6 /* ETActivityIndicatorView.m */,
+			);
+			path = ETActivityIndicatorView;
 			sourceTree = "<group>";
 		};
 		1191C1D01A76AD670092FE20 /* Login */ = {
@@ -331,7 +358,6 @@
 			children = (
 				11A549E01A809C4200926546 /* CFNetwork.framework */,
 				111A5E751A77A18000E6D425 /* AVFoundation.framework */,
-				111A5E731A76DBBE00E6D425 /* AudioToolbox.framework */,
 				1191C1D51A76AE370092FE20 /* UIKit.framework */,
 				268E3EDE45069A6C1B2593B5 /* libPods-VKOfflineMusicPlayer.a */,
 			);
@@ -399,6 +425,14 @@
 					110F5E8C1A7644A600216B17 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 2AWE588629;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 					110F5EA81A7644A600216B17 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -493,7 +527,10 @@
 				110F5E961A7644A600216B17 /* AppDelegate.m in Sources */,
 				111A5E6E1A76D05A00E6D425 /* SongMO+Actions.m in Sources */,
 				1191C1D91A76AEEE0092FE20 /* MPPagesViewControllerDataSource.m in Sources */,
+				116C9D8D1A93ED5200CB7EB6 /* DiamondActivityIndicator.m in Sources */,
 				1191C1D41A76AE140092FE20 /* MPPagesViewController.m in Sources */,
+				116C9D891A93E1C200CB7EB6 /* Circle.m in Sources */,
+				116C9D821A93B9FF00CB7EB6 /* LaunchScreenViewController.m in Sources */,
 				111A5E721A76DBB000E6D425 /* MPAudioPlayer.m in Sources */,
 				115A80FB1A8FD5B7003B0AC9 /* UCZProgressView.m in Sources */,
 				111A5E591A76C51400E6D425 /* MPSongViewCell.m in Sources */,
@@ -501,6 +538,7 @@
 				111A5E6A1A76CADE00E6D425 /* UserMO+Actions.m in Sources */,
 				111A5E651A76C96200E6D425 /* SongMO.m in Sources */,
 				110F5E991A7644A600216B17 /* VKOfflineMusicPlayer.xcdatamodeld in Sources */,
+				116C9D8A1A93E1C200CB7EB6 /* ETActivityIndicatorView.m in Sources */,
 				110F5E931A7644A600216B17 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,13 +663,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = VKOfflineMusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -642,13 +683,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = VKOfflineMusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

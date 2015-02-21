@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel * nickNameLabel;
 @property (weak, nonatomic) IBOutlet UIView *loaderIndicatorView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editListButton;
+@property (nonatomic, strong) IBOutlet UISwitch * offlineModeSwitcher;
 
 @property (strong, nonatomic) IBOutlet UIView *emptyListView;
 

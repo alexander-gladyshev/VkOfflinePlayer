@@ -48,13 +48,17 @@
     [context save:nil];
 }
 
--(NSFetchedResultsController *)getFetchResultCOntrollerWithCachedSongs{
++(NSFetchedResultsController *)getFetchResultCOntrollerWithCachedSongs{
     NSFetchRequest * request = [NSFetchRequest new];
     NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"SongMO"
                                                           inManagedObjectContext:[AppDelegate appDelegate].managedObjectContext];
     [request setEntity:entityDescription];
     NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"orderId" ascending:YES];
     [request setSortDescriptors:@[sortDescriptor]];
+    
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"isCached==%@",@(YES)];
+    [request setPredicate:predicate];
+    
     NSFetchedResultsController * fetchResCtrl = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                                     managedObjectContext:[AppDelegate appDelegate].managedObjectContext
                                                                                       sectionNameKeyPath:nil
@@ -70,7 +74,6 @@
     NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"SongMO"
                                                           inManagedObjectContext:[AppDelegate appDelegate].managedObjectContext];
     [request setEntity:entityDescription];
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"isCached==%@",@(YES)];
     NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"orderId" ascending:YES];
     [request setSortDescriptors:@[sortDescriptor]];
     NSFetchedResultsController * fetchResCtrl = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -111,8 +114,8 @@
     return [NSString stringWithFormat:@"%@%@.mp3",[NSHomeDirectory() stringByAppendingString:@"/Documents/"],[self.title stringByAppendingString:self.identifier]];
 }
 
--(BOOL)isCached{
-    return [[NSFileManager defaultManager] fileExistsAtPath:[self fullPath]];
+-(BOOL)isRealCached{
+    return self.isCached && [[NSFileManager defaultManager] fileExistsAtPath:[self fullPath]];
 }
 
 -(void)downloadSongToHardWithDownloadBlock:(DownloadProgressBLock)downloadBlock{
@@ -130,6 +133,16 @@
     [operation setDownloadProgressBlock:downloadBlock];
     [[MPAudioPlayer sharedInstance] addDownloadOperation:operation forSong:self];
     [operation start];
+}
+
+-(void)setIsCached:(BOOL)isCached{
+    if ([[NSFileManager defaultManager]fileExistsAtPath:self.fullPath]){
+        [self willChangeValueForKey:@"isCached"];
+        [self setPrimitiveValue:@(isCached) forKey:@"isCached"];
+        [self didChangeValueForKey:@"isCached"];
+        
+        NSLog(@"Cached : >>>>>> %@", self.fullName);
+    }
 }
 
 @end

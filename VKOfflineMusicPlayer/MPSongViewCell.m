@@ -10,16 +10,23 @@
 #import "UCZProgressView.h"
 #import "MPAudioPlayer.h"
 #import "AppDelegate.h"
+#import <NAKPlaybackIndicatorView.h>
 
 const float downloadMode = 7;
 const float cachedMode = -50;
+
+const float playMode = 12;
+const float stopMode = playMode - 33;
+
 @interface MPSongViewCell ()
 
 @property (nonatomic, strong) SongMO * song;
-@property (weak, nonatomic) IBOutlet UILabel *songTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel * songTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel * durationLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * rightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * leftConstraint;
 @property (nonatomic, strong) IBOutlet UCZProgressView * progressView;
+@property (nonatomic, strong) IBOutlet NAKPlaybackIndicatorView * playBackView;
 
 @end
 
@@ -30,7 +37,9 @@ const float cachedMode = -50;
     if (self.song){
         AFHTTPRequestOperation * operation = [[MPAudioPlayer sharedInstance] downloadOperationForSong:self.song];
         if (operation){
-            [operation setDownloadProgressBlock:nil];
+//            [operation setDownloadProgressBlock:nil];
+            self.progressView.progress = 0;
+            self.progressView.indeterminate = NO;
         }
     }
 }
@@ -39,17 +48,33 @@ const float cachedMode = -50;
     self.song = song;
     self.songTitleLabel.text = [song fullName];
     self.durationLabel.text = [NSString stringWithFormat:@"%@",song.duration];
-    [self.progressView setNeedsLayout];
-    self.rightConstraint.constant = [song isCached] ? cachedMode : downloadMode;
-    [self.progressView layoutIfNeeded];
+    self.rightConstraint.constant = [song isRealCached] ? cachedMode : downloadMode;
     
+    if ([[MPAudioPlayer sharedInstance] isCurrentSong:self.song]){
+        self.leftConstraint.constant = playMode;
+        switch ([MPAudioPlayer sharedInstance].state) {
+            case MPAudioPlayerStatePlaying:
+                self.playBackView.state = NAKPlaybackIndicatorViewStatePlaying;
+                break;
+            case MPAudioPlayerStatePaused:
+                self.playBackView.state = NAKPlaybackIndicatorViewStatePaused;
+                break;
+            case MPAudioPlayerStateStoped:
+                self.playBackView.state = NAKPlaybackIndicatorViewStateStopped;
+                break;
+            default:
+                break;
+        }
+    }else{
+        self.leftConstraint.constant = stopMode;
+        self.playBackView.state = NAKPlaybackIndicatorViewStateStopped;
+    }
     AFHTTPRequestOperation * operation = [[MPAudioPlayer sharedInstance] downloadOperationForSong:self.song];
-    self.downloadSongButton.hidden = [song isCached] || operation;
-    self.progressView.indeterminate = ![song isCached] && operation;
+    self.downloadSongButton.hidden = [song isRealCached] || operation;
+    self.progressView.indeterminate = ![song isRealCached] && operation;
     if (operation){
         [operation setDownloadProgressBlock:[self getDownloadProgressBlock]];
     }
-    NSLog(@"%@  --- %@", [song isCached] ? @"YES" : @"NO",song.title);
 }
 
 

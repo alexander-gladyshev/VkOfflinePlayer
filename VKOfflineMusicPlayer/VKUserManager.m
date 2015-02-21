@@ -34,6 +34,18 @@ static VKUserManager * instance;
     if ([VKSdk wakeUpSession])
     {
         NSLog(@"START SESSION");
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"VKToken"] &&
+            [[NSUserDefaults standardUserDefaults] objectForKey:@"VKTUserId"] &&
+            [[NSUserDefaults standardUserDefaults] objectForKey:@"VKSecret"]){
+            
+            
+            NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKToken"];
+            NSString * userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKTUserId"];
+            NSString * secret = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKSecret"];
+            
+            VKAccessToken * accessToken = [VKAccessToken tokenWithToken:token secret:secret userId:userId];
+            [VKSdk setAccessToken:token];
+        }
         //Start working
     }
 }
@@ -52,6 +64,9 @@ static VKUserManager * instance;
 }
 
 -(void)vkSdkReceivedNewToken:(VKAccessToken *)newToken{
+    [[NSUserDefaults standardUserDefaults] setObject:newToken.accessToken forKey:@"VKToken"];
+    [[NSUserDefaults standardUserDefaults] setObject:newToken.userId forKey:@"VKTUserId"];
+    [[NSUserDefaults standardUserDefaults] setObject:newToken.secret forKey:@"VKSecret"];
     NSLog(@"SUCCESS!!!");
     [self callCompletionWithSuccess:YES];
 }
